@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zumba cafe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="navbar "  >
+
+            <h1  >Zumba Cafe</h1>
+      
+            <nav>
+                <ul >
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><i class="fa-solid fa-mug-saucer"></i></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="hero">
+            <h1>Welcome to Zumba Cafe</h1>
+            <p>Experience the best coffee in town</p>
+    
+            <section id="menu">
+
+    <h2>Our Menu</h2>
+
+    <div class="menu-container">
+
+        <!-- Coffee 1 -->
+        <div class="card">
+
+            <img src="coffe1.jpg" alt="Cappuccino">
+
+            <h3>Cappuccino</h3>
+
+            <p class="rating">⭐⭐⭐⭐⭐</p>
+
+            <p class="price">₹149</p>
+
+            <button onclick="orderCoffee('Cappuccino', 149)">
+    Order Now
+</button>
+
+        </div>
+
+
+        <!-- Coffee 2 -->
+        <div class="card">
+
+            <img src="coffe2.jpg" alt="Latte">
+
+            <h3>Classic Latte</h3>
+
+            <p class="rating">⭐⭐⭐⭐⭐</p>
+
+            <p class="price">₹179</p>
+
+          <button onclick="orderCoffee('Classic Latte', 179)">
+    Order Now
+</button>
+
+        </div>
+
+
+        <!-- Coffee 3 -->
+        <div class="card">
+
+            <img src="coffe3.jpg" alt="Mocha">
+
+            <h3>Chocolate Mocha</h3>
+
+            <p class="rating">⭐⭐⭐⭐</p>
+
+            <p class="price">₹189</p>
+
+           <button onclick="orderCoffee('Chocolate Mocha', 189)">
+    Order Now
+</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+        </div>
+        
+
+    
+
+    </header>
+    <div id="orderModal" class="order-modal">
+
+    <div class="order-box">
+
+        <button class="close-order" onclick="closeOrder()">
+            ×
+        </button>
+
+        <h2>☕ Place Your Order</h2>
+
+        <p id="selectedCoffee"></p>
+
+        <form id="orderForm">
+
+            <label>Your Name</label>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <label>Phone Number</label>
+
+            <input
+                type="tel"
+                id="customerPhone"
+                placeholder="Enter phone number"
+                required
+            >
+
+
+            <label>Quantity</label>
+
+            <input
+                type="number"
+                id="quantity"
+                value="1"
+                min="1"
+                required
+            >
+
+
+            <label>Order Type</label>
+
+            <select id="orderType">
+
+                <option value="Takeaway">
+                    Takeaway
+                </option>
+
+                <option value="Dine In">
+                    Dine In
+                </option>
+
+            </select>
+
+
+            <label>Special Request</label>
+
+            <textarea
+                id="message"
+                placeholder="Less sugar, extra hot, etc."
+            ></textarea>
+
+
+            <button type="submit" class="place-order">
+                Place Order
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+    <footer id="contact">
+
+    <div class="footer-container">
+
+        <div class="footer-about">
+            <h2>Zumba Cafe ☕</h2>
+            <p>
+                Fresh coffee, warm moments, and good vibes.
+                Your favorite place to enjoy every sip.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+
+            <p>📍 New Delhi, India</p>
+            <p>📞 +91 78380 35263</p>
+            <p>✉️ bhanushriwas02@gmail.com</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Zumba Cafe. All Rights Reserved.</p>
+    </div>
+
+</footer>
+<script src="script.js"></script>
+    
+</body>
+</html>
