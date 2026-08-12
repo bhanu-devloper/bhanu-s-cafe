@@ -154,7 +154,7 @@ document.getElementById("orderForm")
 
         India example:
 
-        919876543210
+        91 7838035263
 
         Don't use:
         +
