@@ -66,7 +66,7 @@ document.getElementById("orderForm").addEventListener(
 
 
         const whatsappMessage =
-            `☕ *ZUMBA CAFE ORDER*
+            `☕ *BHANU'S CAFE ORDER*
 
 👤 Customer: ${name}
 
