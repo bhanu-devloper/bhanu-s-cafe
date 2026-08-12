@@ -1,55 +1,146 @@
+/* =========================================
+   MOBILE NAVBAR
+========================================= */
+
+const menuToggle =
+    document.getElementById("menuToggle");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+
+menuToggle.addEventListener("click", function () {
+
+    navLinks.classList.toggle("active");
+
+});
+
+
+/* CLOSE MOBILE MENU AFTER CLICK */
+
+const links =
+    document.querySelectorAll(".nav-links a");
+
+
+links.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
+
+
+/* =========================================
+   ORDER SYSTEM
+========================================= */
+
 let selectedCoffee = "";
+
 let selectedPrice = 0;
 
 
-/* OPEN ORDER WINDOW */
+/* OPEN ORDER */
 
-function orderCoffee(coffeeName, price) {
+function openOrder(coffee, price) {
 
-    selectedCoffee = coffeeName;
+    selectedCoffee = coffee;
 
     selectedPrice = price;
 
-    document.getElementById("selectedCoffee").textContent =
-        coffeeName + " — ₹" + price;
 
-    document.getElementById("orderModal").style.display =
-        "flex";
+    document.getElementById("selectedItem").textContent =
+        coffee + " — ₹" + price;
+
+
+    updateTotal();
+
+
+    document.getElementById("orderModal")
+        .classList.add("active");
+
+
+    document.body.style.overflow = "hidden";
+
 }
 
 
-/* CLOSE ORDER WINDOW */
+/* CLOSE ORDER */
 
 function closeOrder() {
 
-    document.getElementById("orderModal").style.display =
-        "none";
+    document.getElementById("orderModal")
+        .classList.remove("active");
+
+
+    document.body.style.overflow = "";
+
 }
 
 
-/* SUBMIT ORDER */
+/* UPDATE TOTAL */
 
-document.getElementById("orderForm").addEventListener(
-    "submit",
-    function(event) {
+function updateTotal() {
+
+    const quantity =
+        Number(
+            document.getElementById("quantity").value
+        );
+
+
+    const total =
+        selectedPrice * quantity;
+
+
+    document.getElementById("orderTotal")
+        .textContent = "₹" + total;
+
+}
+
+
+/* QUANTITY CHANGE */
+
+document.getElementById("quantity")
+    .addEventListener("input", updateTotal);
+
+
+/* =========================================
+   SEND ORDER TO WHATSAPP
+========================================= */
+
+document.getElementById("orderForm")
+    .addEventListener("submit", function (event) {
 
         event.preventDefault();
 
 
         const name =
-            document.getElementById("customerName").value;
+            document.getElementById("customerName")
+                .value.trim();
+
 
         const phone =
-            document.getElementById("customerPhone").value;
+            document.getElementById("customerPhone")
+                .value.trim();
+
 
         const quantity =
-            document.getElementById("quantity").value;
+            Number(
+                document.getElementById("quantity")
+                    .value
+            );
+
 
         const orderType =
-            document.getElementById("orderType").value;
+            document.getElementById("orderType")
+                .value;
 
-        const message =
-            document.getElementById("message").value;
+
+        const specialRequest =
+            document.getElementById("specialRequest")
+                .value.trim();
 
 
         const total =
@@ -57,22 +148,33 @@ document.getElementById("orderForm").addEventListener(
 
 
         /*
-        CHANGE THIS NUMBER
-        TO YOUR WHATSAPP NUMBER
+        =====================================
+        PUT YOUR WHATSAPP NUMBER HERE
+        =====================================
+
+        India example:
+
+        919876543210
+
+        Don't use:
+        +
+        spaces
+        -
         */
 
         const cafeWhatsApp =
-            "91 78380 35263";
+            "919876543210";
 
 
-        const whatsappMessage =
-            `☕ *BHANU'S CAFE ORDER*
+        const message =
+
+`☕ ZUMBA CAFE ORDER
 
 👤 Customer: ${name}
 
 📞 Phone: ${phone}
 
-☕ Coffee: ${selectedCoffee}
+☕ Item: ${selectedCoffee}
 
 🔢 Quantity: ${quantity}
 
@@ -83,14 +185,16 @@ document.getElementById("orderForm").addEventListener(
 🍽️ Order Type: ${orderType}
 
 📝 Special Request:
-${message || "None"}`;
+${specialRequest || "None"}
+
+Thank you!`;
 
 
         const whatsappURL =
             "https://wa.me/" +
             cafeWhatsApp +
             "?text=" +
-            encodeURIComponent(whatsappMessage);
+            encodeURIComponent(message);
 
 
         window.open(
@@ -98,5 +202,38 @@ ${message || "None"}`;
             "_blank"
         );
 
+
+        closeOrder();
+
+    });
+
+
+/* =========================================
+   CLOSE MODAL WHEN CLICKING OUTSIDE
+========================================= */
+
+document.getElementById("orderModal")
+    .addEventListener("click", function (event) {
+
+        if (event.target === this) {
+
+            closeOrder();
+
+        }
+
+    });
+
+
+/* =========================================
+   ESCAPE KEY CLOSE
+========================================= */
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+
+        closeOrder();
+
     }
-);
+
+});
