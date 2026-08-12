@@ -1,216 +1,628 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BHANU"S CAFE</title>
+
+    <title>Zumba Cafe | Coffee & Good Vibes</title>
+
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
 </head>
+
 <body>
+
+    <!-- ================= NAVBAR ================= -->
+
     <header>
-        <div class="navbar "  >
 
-            <h1  >bhanu's Cafe</h1>
-      
-            <nav>
-                <ul >
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><i class="fa-solid fa-mug-saucer"></i></li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="navbar">
 
-        <div class="hero">
-            <h1>Welcome to Bhanu's Cafe</h1>
-            <p>Experience the best coffee in town</p>
-    
-            <section id="menu">
+            <a href="#home" class="logo">
+                <i class="fa-solid fa-mug-hot"></i>
+                Zumba Cafe
+            </a>
 
-    <h2>Our Menu</h2>
-
-    <div class="menu-container">
-
-        <!-- Coffee 1 -->
-        <div class="card">
-
-            <img src="coffe1.jpg" alt="Cappuccino">
-
-            <h3>Cappuccino</h3>
-
-            <p class="rating">⭐⭐⭐⭐⭐</p>
-
-            <p class="price">₹149</p>
-
-            <button onclick="orderCoffee('Cappuccino', 149)">
-    Order Now
-</button>
-
-        </div>
-
-
-        <!-- Coffee 2 -->
-        <div class="card">
-
-            <img src="coffe2.jpg" alt="Latte">
-
-            <h3>Classic Latte</h3>
-
-            <p class="rating">⭐⭐⭐⭐⭐</p>
-
-            <p class="price">₹179</p>
-
-          <button onclick="orderCoffee('Classic Latte', 179)">
-    Order Now
-</button>
-
-        </div>
-
-
-        <!-- Coffee 3 -->
-        <div class="card">
-
-            <img src="coffe3.jpg" alt="Mocha">
-
-            <h3>Chocolate Mocha</h3>
-
-            <p class="rating">⭐⭐⭐⭐</p>
-
-            <p class="price">₹189</p>
-
-           <button onclick="orderCoffee('Chocolate Mocha', 189)">
-    Order Now
-</button>
-
-        </div>
-
-    </div>
-
-</section>
-
-        </div>
-        
-
-    
-
-    </header>
-    <div id="orderModal" class="order-modal">
-
-    <div class="order-box">
-
-        <button class="close-order" onclick="closeOrder()">
-            ×
-        </button>
-
-        <h2>☕ Place Your Order</h2>
-
-        <p id="selectedCoffee"></p>
-
-        <form id="orderForm">
-
-            <label>Your Name</label>
-
-            <input
-                type="text"
-                id="customerName"
-                placeholder="Enter your name"
-                required
-            >
-
-
-            <label>Phone Number</label>
-
-            <input
-                type="tel"
-                id="customerPhone"
-                placeholder="Enter phone number"
-                required
-            >
-
-
-            <label>Quantity</label>
-
-            <input
-                type="number"
-                id="quantity"
-                value="1"
-                min="1"
-                required
-            >
-
-
-            <label>Order Type</label>
-
-            <select id="orderType">
-
-                <option value="Takeaway">
-                    Takeaway
-                </option>
-
-                <option value="Dine In">
-                    Dine In
-                </option>
-
-            </select>
-
-
-            <label>Special Request</label>
-
-            <textarea
-                id="message"
-                placeholder="Less sugar, extra hot, etc."
-            ></textarea>
-
-
-            <button type="submit" class="place-order">
-                Place Order
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
             </button>
 
-        </form>
+            <ul class="nav-links" id="navLinks">
 
-    </div>
+                <li>
+                    <a href="#home">Home</a>
+                </li>
 
-</div>
+                <li>
+                    <a href="#menu">Menu</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+                <li>
+                    <a href="#menu" class="nav-order">
+                        Order Now
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <p class="small-title">
+                    WELCOME TO ZUMBA CAFE
+                </p>
+
+                <h1>
+                    Coffee made with
+                    <span>passion.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Freshly brewed coffee, delicious treats,
+                    and unforgettable moments.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#menu" class="primary-btn">
+                        Explore Menu
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="#about" class="secondary-btn">
+                        Discover Us
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </header>
+
+
+    <!-- ================= MENU ================= -->
+
+    <main>
+
+        <section class="menu-section" id="menu">
+
+            <div class="section-heading">
+
+                <p>OUR MENU</p>
+
+                <h2>Choose your favorite</h2>
+
+                <span>
+                    Crafted with love. Served with a smile.
+                </span>
+
+            </div>
+
+
+            <div class="menu-container">
+
+
+                <!-- CARD 1 -->
+
+                <article class="card">
+
+                    <div class="card-image">
+
+                        <img src="images/cappuccino.jpg"
+                            alt="Cappuccino">
+
+                        <span class="popular">
+                            Popular
+                        </span>
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <div class="card-title">
+
+                            <h3>Cappuccino</h3>
+
+                            <span>₹149</span>
+
+                        </div>
+
+                        <p>
+                            Rich espresso with steamed milk
+                            and creamy foam.
+                        </p>
+
+                        <div class="card-bottom">
+
+                            <span class="rating">
+                                ⭐ 4.9
+                            </span>
+
+                            <button
+                                class="order-btn"
+                                onclick="openOrder('Cappuccino', 149)">
+                                Order
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 2 -->
+
+                <article class="card">
+
+                    <div class="card-image">
+
+                        <img src="images/latte.jpg"
+                            alt="Classic Latte">
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <div class="card-title">
+
+                            <h3>Classic Latte</h3>
+
+                            <span>₹179</span>
+
+                        </div>
+
+                        <p>
+                            Smooth espresso blended with
+                            silky steamed milk.
+                        </p>
+
+                        <div class="card-bottom">
+
+                            <span class="rating">
+                                ⭐ 4.8
+                            </span>
+
+                            <button
+                                class="order-btn"
+                                onclick="openOrder('Classic Latte', 179)">
+                                Order
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 3 -->
+
+                <article class="card">
+
+                    <div class="card-image">
+
+                        <img src="images/mocha.jpg"
+                            alt="Chocolate Mocha">
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <div class="card-title">
+
+                            <h3>Chocolate Mocha</h3>
+
+                            <span>₹189</span>
+
+                        </div>
+
+                        <p>
+                            Espresso, chocolate and creamy
+                            milk in every sip.
+                        </p>
+
+                        <div class="card-bottom">
+
+                            <span class="rating">
+                                ⭐ 4.9
+                            </span>
+
+                            <button
+                                class="order-btn"
+                                onclick="openOrder('Chocolate Mocha', 189)">
+                                Order
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 4 -->
+
+                <article class="card">
+
+                    <div class="card-image">
+
+                        <img src="images/americano.jpg"
+                            alt="Americano">
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <div class="card-title">
+
+                            <h3>Americano</h3>
+
+                            <span>₹129</span>
+
+                        </div>
+
+                        <p>
+                            Bold espresso with hot water
+                            for a smooth finish.
+                        </p>
+
+                        <div class="card-bottom">
+
+                            <span class="rating">
+                                ⭐ 4.7
+                            </span>
+
+                            <button
+                                class="order-btn"
+                                onclick="openOrder('Americano', 129)">
+                                Order
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 5 -->
+
+                <article class="card">
+
+                    <div class="card-image">
+
+                        <img src="images/cold-coffee.jpg"
+                            alt="Cold Coffee">
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <div class="card-title">
+
+                            <h3>Cold Coffee</h3>
+
+                            <span>₹169</span>
+
+                        </div>
+
+                        <p>
+                            Chilled creamy coffee for a
+                            refreshing experience.
+                        </p>
+
+                        <div class="card-bottom">
+
+                            <span class="rating">
+                                ⭐ 4.8
+                            </span>
+
+                            <button
+                                class="order-btn"
+                                onclick="openOrder('Cold Coffee', 169)">
+                                Order
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section class="about-section" id="about">
+
+            <div class="about-content">
+
+                <p class="section-label">
+                    ABOUT US
+                </p>
+
+                <h2>
+                    More than coffee.
+                    <span>It's a feeling.</span>
+                </h2>
+
+                <p>
+                    At Zumba Cafe, we believe every cup tells
+                    a story. From carefully selected coffee
+                    beans to the final pour, we make every
+                    cup with passion and care.
+                </p>
+
+                <p>
+                    Come in, relax, meet your friends and
+                    enjoy the perfect coffee experience.
+                </p>
+
+                <a href="#menu" class="primary-btn">
+                    View Our Menu
+                </a>
+
+            </div>
+
+            <div class="about-image">
+
+                <img src="images/coffee.jpg"
+                    alt="Zumba Cafe Coffee">
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
     <footer id="contact">
 
-    <div class="footer-container">
+        <div class="footer-container">
 
-        <div class="footer-about">
-            <h2>Bhanu's Cafe ☕</h2>
+            <div class="footer-brand">
+
+                <a href="#home" class="logo">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    Zumba Cafe
+                </a>
+
+                <p>
+                    Good coffee. Great moments.
+                    Every single day.
+                </p>
+
+                <div class="social-icons">
+
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <a href="#home">Home</a>
+
+                <a href="#menu">Menu</a>
+
+                <a href="#about">About</a>
+
+                <a href="#contact">Contact</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Contact</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    New Delhi, India
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    hello@zumbacafe.com
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Opening Hours</h3>
+
+                <p>Monday - Friday</p>
+
+                <strong>8:00 AM - 10:00 PM</strong>
+
+                <p>Saturday - Sunday</p>
+
+                <strong>9:00 AM - 11:00 PM</strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
             <p>
-                Fresh coffee, warm moments, and good vibes.
-                Your favorite place to enjoy every sip.
+                © 2026 Zumba Cafe. All Rights Reserved.
             </p>
+
         </div>
 
-        <div class="footer-links">
-            <h3>Quick Links</h3>
+    </footer>
 
-            <a href="#home">Home</a>
-            <a href="#menu">Menu</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </div>
 
-        <div class="footer-contact">
-            <h3>Contact Us</h3>
+    <!-- ================= ORDER POPUP ================= -->
 
-            <p>📍 New Delhi, India</p>
-            <p>📞 +91 78380 35263</p>
-            <p>✉️ bhanushriwas02@gmail.com</p>
+    <div class="order-modal" id="orderModal">
+
+        <div class="order-box">
+
+            <button
+                class="close-btn"
+                onclick="closeOrder()">
+                ×
+            </button>
+
+            <div class="order-heading">
+
+                <i class="fa-solid fa-mug-hot"></i>
+
+                <h2>Place Your Order</h2>
+
+                <p id="selectedItem">
+                    Coffee
+                </p>
+
+            </div>
+
+
+            <form id="orderForm">
+
+                <label>
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+                <label>
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    placeholder="Enter your phone number"
+                    required
+                >
+
+
+                <label>
+                    Quantity
+                </label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    value="1"
+                    min="1"
+                    required
+                >
+
+
+                <label>
+                    Order Type
+                </label>
+
+                <select id="orderType">
+
+                    <option value="Takeaway">
+                        Takeaway
+                    </option>
+
+                    <option value="Dine In">
+                        Dine In
+                    </option>
+
+                </select>
+
+
+                <label>
+                    Special Request
+                </label>
+
+                <textarea
+                    id="specialRequest"
+                    placeholder="Less sugar, extra hot, etc."
+                ></textarea>
+
+
+                <div class="order-total">
+
+                    <span>Total</span>
+
+                    <strong id="orderTotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="place-order">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    Send Order on WhatsApp
+
+                </button>
+
+            </form>
+
         </div>
 
     </div>
 
-    <div class="footer-bottom">
-        <p>© 2026 bhanu's Cafe. All Rights Reserved.</p>
-    </div>
 
-</footer>
-<script src="script.js"></script>
-    
+    <script src="script.js"></script>
+
 </body>
+
 </html>
