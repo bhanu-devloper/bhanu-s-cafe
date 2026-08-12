@@ -163,12 +163,12 @@ document.getElementById("orderForm")
         */
 
         const cafeWhatsApp =
-            "919876543210";
+            "91 78380 35263";
 
 
         const message =
 
-`☕ ZUMBA CAFE ORDER
+`☕ BHANU"S CAFE ORDER
 
 👤 Customer: ${name}
 
