@@ -1,0 +1,336 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/**    nav bar    **/
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #412D15;
+    padding: 10px 20px;
+    height: 70px;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+}
+
+nav ul li{
+    margin: 0 10px;
+    font-size: 30px;
+}
+/**    hero section    **/
+.hero{
+    height: 100vh;
+    background-color: #F3E5D0;
+   /** background-image: url('cafe img.jpg');
+    background-size: cover;
+    background-position: center;**/
+}
+.hero h1{
+    color:#ef9656;
+    font-size: 50px;
+    text-align: center;
+   
+}
+.hero p{
+    color:#fad4a1;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/** card section **/
+#menu {
+    background-color: #f3e3d0;
+    padding: 60px 20px;
+}
+
+#menu h2 {
+    text-align: center;
+    font-size: 40px;
+    color: #2B1D16;
+    margin-bottom: 40px;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 280px;
+    background-color: #E1DCC9;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(43, 29, 22, 0.12);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card h3 {
+    color: #2B1D16;
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+.rating {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.price {
+    color: #C58B55;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.card button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #5C3A29;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* FOOTER */
+
+footer {
+    background-color: #2B1D16;
+    color: white;
+    padding-top: 60px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 30px 50px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.footer-about {
+    max-width: 350px;
+}
+
+.footer-about h2 {
+    color: #C58B55;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.footer-about p {
+    color: #D6B89C;
+    line-height: 1.7;
+}
+
+.footer-links,
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #D6B89C;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #C58B55;
+}
+
+.footer-contact p {
+    color: #D6B89C;
+}
+
+.footer-bottom {
+    border-top: 1px solid #5C3A29;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-bottom p {
+    color: #D6B89C;
+    font-size: 14px;
+}
+/* ORDER POPUP */
+
+.order-modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(43, 29, 22, 0.75);
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    z-index: 999;
+}
+
+
+/* ORDER BOX */
+
+.order-box {
+    width: 100%;
+
+    max-width: 450px;
+
+    background: #FFF9F2;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    position: relative;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+
+/* CLOSE BUTTON */
+
+.close-order {
+    position: absolute;
+
+    right: 20px;
+
+    top: 15px;
+
+    border: none;
+
+    background: none;
+
+    font-size: 30px;
+
+    color: #5C3A29;
+
+    cursor: pointer;
+}
+
+
+/* HEADING */
+
+.order-box h2 {
+    color: #2B1D16;
+
+    margin-bottom: 10px;
+}
+
+#selectedCoffee {
+    color: #C58B55;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+
+/* FORM */
+
+.order-box label {
+    display: block;
+
+    margin-top: 15px;
+
+    margin-bottom: 6px;
+
+    color: #2B1D16;
+
+    font-weight: bold;
+}
+
+
+.order-box input,
+.order-box select,
+.order-box textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #D6B89C;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    background: white;
+}
+
+
+.order-box textarea {
+    height: 90px;
+
+    resize: none;
+}
+
+
+/* PLACE ORDER */
+
+.place-order {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #5C3A29;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.place-order:hover {
+    background: #C58B55;
+}
+
